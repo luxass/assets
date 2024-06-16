@@ -5,5 +5,5 @@ async fn main() -> Result<(), Error> {
     run(handler).await
 }
 
-#[bundled_api(path = "/api")]
+#[bundled_api(path = "/")]
 pub async fn handler(req: Request) -> Result<Response<Body>, Error> {}
