@@ -35,6 +35,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 		c.Response().Header().Set("Content-Type", resp.Header.Get("Content-Type"))
 
+		// set cache control headers
+		c.Response().Header().Set("Cache-Control", "public, max-age=3600")
+
 		_, err = io.Copy(c.Response(), resp.Body)
 		return err
 	})
