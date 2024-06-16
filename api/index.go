@@ -157,7 +157,6 @@ func FontHandlerInternal(c echo.Context, options FontHandlerOptions) error {
 		return err
 	}
 
-	// return the font as a stream of bytes
 	c.Response().Header().Set("Content-Type", "font/ttf")
 	c.Response().Header().Set("Cache-Control", "public, max-age=86400")
 
